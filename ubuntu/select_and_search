@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#xclip -o | xclip -selection clipboard -i
+xclip -o | sed 's/ /%20/g' | (read url; url="https://www.google.com/search?q=$url"; echo "$url"; google-chrome $url;)
